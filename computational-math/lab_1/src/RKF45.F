@@ -1,0 +1,24 @@
+SUBROUTINE RKF45(F,NEQN,Y,T,TOUT,RELERR,ABSERR,
+     *                 IFLAG,WORK,IWORK)
+
+      EXTERNAL F
+      INTEGER NEQN,IFLAG,IWORK(5)
+      REAL Y(NEQN),T,TOUT,RELERR,ABSERR,WORK(1)
+
+      INTEGER K1,K2,K3,K4,K5,K6,K1M
+
+      K1M=NEQN+1
+      K1=K1M+1
+      K2=K1+NEQN
+      K3=K2+NEQN
+      K4=K3+NEQN
+      K5=K4+NEQN
+      K6=K5+NEQN
+
+      CALL RKFS(F,NEQN,Y,T,TOUT,RELERR,ABSERR,IFLAG,
+     *          WORK(1),WORK(K1M),WORK(K1),WORK(K2),
+     *          WORK(K3),WORK(K4),WORK(K5),WORK(K6),
+     *          WORK(K6+1),IWORK(1),IWORK(2),
+     *          IWORK(3),IWORK(4),IWORK(5))
+      RETURN
+      END

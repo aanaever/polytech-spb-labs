@@ -1,0 +1,4 @@
+This is a file for the C  ++ program      .
+This text  contains different kinds of words and punctuation symbols. These words have different amount of words  some sentences have a more than 40symbols.
+There      are also some numbers   :  123, 456     and 789.
+The length of some wo             rds is more than 10 charactersgwgdwgdywd, that means they would be replaced by "Vau!!!" word.

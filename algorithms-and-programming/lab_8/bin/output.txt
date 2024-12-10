@@ -1,0 +1,9 @@
+  1  1  2  3
+  4  3  4  5
+  6  3  6  5
+  1  9  7  3
+The minimum amount is equal to in the line : 1
+The maximum element of this line : 3
+and its index  4
+The minimum element of this line : 1
+ and its index 1

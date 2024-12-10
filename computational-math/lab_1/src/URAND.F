@@ -1,0 +1,33 @@
+      REAL FUNCTION URAND(IY)
+      INTEGER IY
+
+      INTEGER IA,IC,ITWO,M2,M,MIC
+      DOUBLE PRECISION HALFM
+      REAL S
+      DOUBLE PRECISION DATAN,DSQRT
+      DATA M2/0/,ITWO/2/
+      IF(M2.NE.0) GOTO 20
+
+      M=1
+   10 M2=M
+      M=ITWO*M2
+      IF(M .GT. M2) GO TO 10
+      HALFM=M2
+
+      IA=8*IDINT(HALFM*DATAN(1.D0)/8.D0)+5
+      IC=2*IDINT(HALFM*(0.5D0-DSQRT(3.D0)/6.D0))+1
+      MIC=(M2-IC)+M2
+   
+      S=0.5/HALFM
+
+   20 IY=IY*IA
+
+      IF(IY.GT.MIC) IY=(IY-M2)-M2
+      IY=IY+IC
+
+      IF(IY/2.GT.M2) IY=(IY-M2)-M2
+
+      IF(IY.LT.0) IY=(IY+M2)+M2
+      URAND=FLOAT(IY)*S
+      RETURN
+      END
